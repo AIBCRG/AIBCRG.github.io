@@ -19,6 +19,53 @@
             min-height: 100vh;
         }
 
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .nav-btn {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #0288d1, #4fc3f7);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(2, 136, 209, 0.3);
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(2, 136, 209, 0.4);
+        }
+
+        .nav-btn.active {
+            background: linear-gradient(135deg, #01579b, #0277bd);
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -35,7 +82,7 @@
         }
 
         h1 {
-            color: #667eea;
+            color: #0288d1;
             font-size: 2.5em;
             margin-bottom: 10px;
         }
@@ -55,10 +102,10 @@
         }
 
         .intro-section h2 {
-            color: #764ba2;
+            color: #0277bd;
             margin-bottom: 20px;
             font-size: 2em;
-            border-bottom: 3px solid #667eea;
+            border-bottom: 3px solid #4fc3f7;
             padding-bottom: 10px;
         }
 
@@ -69,10 +116,10 @@
         }
 
         .highlight-box {
-            background: linear-gradient(135deg, #667eea15, #764ba215);
+            background: linear-gradient(135deg, #b3e5fc, #e1f5fe);
             padding: 20px;
             border-radius: 10px;
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #0288d1;
             margin: 20px 0;
         }
 
@@ -97,7 +144,7 @@
         }
 
         .app-card h3 {
-            color: #667eea;
+            color: #0288d1;
             margin-bottom: 15px;
             font-size: 1.5em;
             display: flex;
@@ -106,7 +153,7 @@
 
         .app-card h3::before {
             content: "●";
-            color: #764ba2;
+            color: #4fc3f7;
             margin-right: 10px;
             font-size: 1.2em;
         }
@@ -125,7 +172,7 @@
         }
 
         .key-features h2 {
-            color: #764ba2;
+            color: #0277bd;
             margin-bottom: 25px;
             font-size: 2em;
             text-align: center;
@@ -139,15 +186,93 @@
         }
 
         .feature-item {
-            background: linear-gradient(135deg, #667eea10, #764ba210);
+            background: linear-gradient(135deg, #e1f5fe, #b3e5fc);
             padding: 20px;
             border-radius: 10px;
-            border-left: 3px solid #667eea;
+            border-left: 3px solid #4fc3f7;
         }
 
         .feature-item h4 {
-            color: #667eea;
+            color: #0288d1;
             margin-bottom: 10px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .team-member {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 4px solid #4fc3f7;
+            background: linear-gradient(135deg, #e1f5fe, #b3e5fc);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            color: #0288d1;
+        }
+
+        .member-name {
+            color: #0277bd;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .member-role {
+            color: #0288d1;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .member-bio {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .member-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .member-links a {
+            color: #0288d1;
+            text-decoration: none;
+            font-size: 0.9em;
+            padding: 8px 15px;
+            border: 2px solid #4fc3f7;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .member-links a:hover {
+            background: #4fc3f7;
+            color: white;
         }
 
         footer {
@@ -169,9 +294,17 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <nav>
+        <div class="nav-container">
+            <button class="nav-btn active" onclick="showSection('home')">Home</button>
+            <button class="nav-btn" onclick="showSection('team')">Team</button>
+        </div>
+    </nav>
+
+    <div id="home" class="section active">
+        <div class="container">
         <header>
-            <h1>Neuromorphic/Event Vision For Human Robot Interaction/Collaboration</h1>
+            <h1>Neuromorphic/Event Vision</h1>
             <p class="subtitle">Advancing Human-Robot Interaction and Collaboration</p>
         </header>
 
@@ -181,7 +314,7 @@
                 Neuromorphic vision, also known as event-based vision, represents a paradigm shift in how machines perceive the visual world. Unlike traditional frame-based cameras that capture images at fixed intervals, event cameras are bio-inspired sensors that mimic the human retina by asynchronously detecting changes in brightness at each pixel independently.
             </p>
             <p>
-                These sensors generate "events" only when pixel-level brightness changes occur, resulting in a stream of asynchronous events with microsecond temporal resolution. This approach offers several compelling advantages: extremely high temporal resolution (up to 1 million events per second), high dynamic range (>120dB), low latency (<1ms), and significantly reduced data redundancy.
+                These revolutionary sensors generate "events" only when pixel-level brightness changes occur, resulting in a stream of asynchronous events with microsecond temporal resolution. This approach offers several compelling advantages: extremely high temporal resolution (up to 1 million events per second), high dynamic range (>120dB), low latency (<1ms), and significantly reduced data redundancy.
             </p>
             <div class="highlight-box">
                 <strong>Key Innovation:</strong> Event cameras do not capture redundant information from static scenes, making them highly efficient for detecting motion and changes in dynamic environments—perfect for real-time human-robot interaction scenarios.
@@ -266,7 +399,138 @@
             <p>&copy; 2025 Neuromorphic Vision Research | Advancing the Future of Human-Robot Interaction</p>
         </footer>
     </div>
+    </div>
+
+    <div id="team" class="section">
+        <div class="container">
+            <header>
+                <h1>Our Team</h1>
+                <p class="subtitle">Meet the Researchers Behind Neuromorphic Vision</p>
+            </header>
+
+            <div class="intro-section">
+                <h2>Research Team</h2>
+                <p>
+                    Our interdisciplinary team brings together expertise in computer vision, robotics, neuromorphic engineering, and human-robot interaction to advance the state-of-the-art in event-based vision systems.
+                </p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo">👤</div>
+                    <h3 class="member-name">Dr. Jane Smith</h3>
+                    <p class="member-role">Principal Investigator</p>
+                    <p class="member-bio">
+                        Leading research in neuromorphic vision systems with 10+ years of experience in event-based sensing and human-robot interaction.
+                    </p>
+                    <div class="member-links">
+                        <a href="#" target="_blank">Email</a>
+                        <a href="#" target="_blank">LinkedIn</a>
+                        <a href="#" target="_blank">Scholar</a>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">👤</div>
+                    <h3 class="member-name">Dr. John Doe</h3>
+                    <p class="member-role">Senior Researcher</p>
+                    <p class="member-bio">
+                        Specializes in gesture recognition and real-time event processing algorithms for collaborative robotics applications.
+                    </p>
+                    <div class="member-links">
+                        <a href="#" target="_blank">Email</a>
+                        <a href="#" target="_blank">LinkedIn</a>
+                        <a href="#" target="_blank">Scholar</a>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">👤</div>
+                    <h3 class="member-name">Maria Garcia</h3>
+                    <p class="member-role">PhD Candidate</p>
+                    <p class="member-bio">
+                        Working on human action recognition and trajectory prediction using event cameras for safe human-robot collaboration.
+                    </p>
+                    <div class="member-links">
+                        <a href="#" target="_blank">Email</a>
+                        <a href="#" target="_blank">LinkedIn</a>
+                        <a href="#" target="_blank">Scholar</a>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">👤</div>
+                    <h3 class="member-name">Alex Chen</h3>
+                    <p class="member-role">PhD Candidate</p>
+                    <p class="member-bio">
+                        Focuses on facial expression recognition and emotion detection using neuromorphic sensors for empathetic robots.
+                    </p>
+                    <div class="member-links">
+                        <a href="#" target="_blank">Email</a>
+                        <a href="#" target="_blank">LinkedIn</a>
+                        <a href="#" target="_blank">Scholar</a>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">👤</div>
+                    <h3 class="member-name">Sarah Johnson</h3>
+                    <p class="member-role">Research Engineer</p>
+                    <p class="member-bio">
+                        Develops hardware-software integration for event-based vision systems in real-time robotic platforms.
+                    </p>
+                    <div class="member-links">
+                        <a href="#" target="_blank">Email</a>
+                        <a href="#" target="_blank">LinkedIn</a>
+                        <a href="#" target="_blank">Scholar</a>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">👤</div>
+                    <h3 class="member-name">Michael Brown</h3>
+                    <p class="member-role">Master's Student</p>
+                    <p class="member-bio">
+                        Researching human detection and tracking algorithms for dynamic environments using event cameras.
+                    </p>
+                    <div class="member-links">
+                        <a href="#" target="_blank">Email</a>
+                        <a href="#" target="_blank">LinkedIn</a>
+                        <a href="#" target="_blank">Scholar</a>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <p>&copy; 2025 Neuromorphic Vision Research | Advancing the Future of Human-Robot Interaction</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
+
 
 
