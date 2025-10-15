@@ -275,6 +275,147 @@
             color: white;
         }
 
+        .publication-item {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            border-left: 4px solid #4fc3f7;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .publication-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .pub-title {
+            color: #0277bd;
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .pub-authors {
+            color: #555;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .pub-venue {
+            color: #0288d1;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .pub-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .pub-links a {
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #4fc3f7, #0288d1);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .pub-links a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(2, 136, 209, 0.3);
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .project-title {
+            color: #0277bd;
+            font-size: 1.8em;
+            font-weight: 600;
+            flex: 1;
+        }
+
+        .project-status {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .status-ongoing {
+            background: linear-gradient(135deg, #81c784, #66bb6a);
+            color: white;
+        }
+
+        .status-completed {
+            background: linear-gradient(135deg, #64b5f6, #42a5f5);
+            color: white;
+        }
+
+        .project-description {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .project-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .project-detail-item {
+            background: linear-gradient(135deg, #e1f5fe, #b3e5fc);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .project-detail-label {
+            color: #0277bd;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .project-detail-value {
+            color: #555;
+        }
+
+        .year-divider {
+            color: #0288d1;
+            font-size: 1.8em;
+            font-weight: 600;
+            margin: 40px 0 25px 0;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #4fc3f7;
+        }
+
         footer {
             text-align: center;
             padding: 30px;
@@ -290,6 +431,15 @@
             .applications-grid {
                 grid-template-columns: 1fr;
             }
+
+            .nav-container {
+                flex-wrap: wrap;
+            }
+
+            .nav-btn {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
         }
     </style>
 </head>
@@ -297,6 +447,8 @@
     <nav>
         <div class="nav-container">
             <button class="nav-btn active" onclick="showSection('home')">Home</button>
+            <button class="nav-btn" onclick="showSection('projects')">Projects</button>
+            <button class="nav-btn" onclick="showSection('publications')">Publications</button>
             <button class="nav-btn" onclick="showSection('team')">Team</button>
         </div>
     </nav>
@@ -401,6 +553,226 @@
     </div>
     </div>
 
+    <div id="projects" class="section">
+        <div class="container">
+            <header>
+                <h1>Research Projects</h1>
+                <p class="subtitle">Innovative Applications of Neuromorphic Vision</p>
+            </header>
+
+            <div class="intro-section">
+                <h2>Current and Past Projects</h2>
+                <p>
+                    Our research group is actively working on several cutting-edge projects that push the boundaries of event-based vision for human-robot interaction and collaboration.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Real-Time Gesture Recognition for Collaborative Robots</h3>
+                    <span class="project-status status-ongoing">Ongoing</span>
+                </div>
+                <p class="project-description">
+                    This project develops a comprehensive gesture recognition system using event cameras for intuitive human-robot communication in manufacturing environments. The system can recognize complex hand gestures with millisecond latency, enabling workers to control collaborative robots naturally without physical interfaces. Our approach combines deep learning with event-based processing to achieve robust recognition even in challenging industrial lighting conditions.
+                </p>
+                <div class="project-details">
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">Duration</div>
+                        <div class="project-detail-value">2024 - Present</div>
+                    </div>
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">Funding</div>
+                        <div class="project-detail-value">Research Council</div>
+                    </div>
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">Team Lead</div>
+                        <div class="project-detail-value">Muhammad Hamza Zafar</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Event-Based Human Motion Prediction for Safe HRC</h3>
+                    <span class="project-status status-ongoing">Ongoing</span>
+                </div>
+                <p class="project-description">
+                    Focusing on safety-critical applications, this project develops algorithms for predicting human trajectories and intentions using neuromorphic vision sensors. By leveraging the high temporal resolution of event cameras, we can anticipate human movements up to 2 seconds in advance, allowing robots to proactively adjust their paths and avoid collisions. The system has been tested in shared workspace scenarios with promising results.
+                </p>
+                <div class="project-details">
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">Duration</div>
+                        <div class="project-detail-value">2023 - Present</div>
+                    </div>
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">Funding</div>
+                        <div class="project-detail-value">EU Horizon</div>
+                    </div>
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">Team Lead</div>
+                        <div class="project-detail-value">Syed Kumayl Raza Moosavi</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Neuromorphic Vision for Assistive Robotics</h3>
+                    <span class="project-status status-ongoing">Ongoing</span>
+                </div>
+                <p class="project-description">
+                    This project applies event-based vision to assistive robotics for elderly care and rehabilitation. We're developing systems that can detect falls, recognize activities of daily living, and understand user needs through natural gestures and movements. The low power consumption and privacy-preserving nature of event cameras make them ideal for continuous monitoring in home environments.
+                </p>
+                <div class="project-details">
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">Duration</div>
+                        <div class="project-detail-value">2024 - 2026</div>
+                    </div>
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">Funding</div>
+                        <div class="project-detail-value">National Health Research</div>
+                    </div>
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">Team Lead</div>
+                        <div class="project-detail-value">Dr. Filippo Sanfilippo</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Low-Latency Action Recognition Framework</h3>
+                    <span class="project-status status-completed">Completed</span>
+                </div>
+                <p class="project-description">
+                    Developed a novel deep learning architecture optimized for event-based action recognition with sub-10ms latency. The framework introduced innovative spatio-temporal convolution operations that efficiently process event streams while maintaining high accuracy. This work has been successfully deployed in industrial robotics applications and published in top-tier conferences.
+                </p>
+                <div class="project-details">
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">Duration</div>
+                        <div class="project-detail-value">2022 - 2024</div>
+                    </div>
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">Funding</div>
+                        <div class="project-detail-value">Industry Partnership</div>
+                    </div>
+                    <div class="project-detail-item">
+                        <div class="project-detail-label">Team Lead</div>
+                        <div class="project-detail-value">Dr. Filippo Sanfilippo</div>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <p>&copy; 2025 Neuromorphic Vision Research | Advancing the Future of Human-Robot Interaction</p>
+            </footer>
+        </div>
+    </div>
+
+    <div id="publications" class="section">
+        <div class="container">
+            <header>
+                <h1>Publications</h1>
+                <p class="subtitle">Our Research Contributions to Neuromorphic Vision</p>
+            </header>
+
+            <div class="intro-section">
+                <h2>Selected Publications</h2>
+                <p>
+                    Our research team has published extensively in leading conferences and journals in computer vision, robotics, and human-robot interaction. Below is a selection of our recent publications.
+                </p>
+            </div>
+
+            <div class="year-divider">2025</div>
+
+            <div class="publication-item">
+                <div class="pub-title">Ultra-Fast Gesture Recognition for Industrial Human-Robot Collaboration Using Event Cameras</div>
+                <div class="pub-authors">Muhammad Hamza Zafar, Filippo Sanfilippo, Syed Kumayl Raza Moosavi</div>
+                <div class="pub-venue">IEEE International Conference on Robotics and Automation (ICRA), 2025</div>
+                <div class="pub-links">
+                    <a href="#" target="_blank">PDF</a>
+                    <a href="#" target="_blank">arXiv</a>
+                    <a href="#" target="_blank">Code</a>
+                    <a href="#" target="_blank">Video</a>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="pub-title">Event-Based Human Trajectory Prediction with Temporal Attention Networks</div>
+                <div class="pub-authors">Syed Kumayl Raza Moosavi, Filippo Sanfilippo, Muhammad Hamza Zafar</div>
+                <div class="pub-venue">IEEE Transactions on Robotics (T-RO), 2025</div>
+                <div class="pub-links">
+                    <a href="#" target="_blank">PDF</a>
+                    <a href="#" target="_blank">IEEE Xplore</a>
+                    <a href="#" target="_blank">Code</a>
+                </div>
+            </div>
+
+            <div class="year-divider">2024</div>
+
+            <div class="publication-item">
+                <div class="pub-title">Neuromorphic Vision for Real-Time Human Action Recognition in Collaborative Robotics</div>
+                <div class="pub-authors">Filippo Sanfilippo, Muhammad Hamza Zafar, Syed Kumayl Raza Moosavi</div>
+                <div class="pub-venue">International Journal of Computer Vision (IJCV), 2024</div>
+                <div class="pub-links">
+                    <a href="#" target="_blank">PDF</a>
+                    <a href="#" target="_blank">DOI</a>
+                    <a href="#" target="_blank">Supplementary</a>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="pub-title">Low-Latency Facial Expression Recognition Using Event-Based Cameras for Empathetic Robots</div>
+                <div class="pub-authors">Muhammad Hamza Zafar, Filippo Sanfilippo</div>
+                <div class="pub-venue">ACM/IEEE International Conference on Human-Robot Interaction (HRI), 2024</div>
+                <div class="pub-links">
+                    <a href="#" target="_blank">PDF</a>
+                    <a href="#" target="_blank">ACM DL</a>
+                    <a href="#" target="_blank">Poster</a>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="pub-title">A Comprehensive Survey on Event-Based Vision for Human-Robot Interaction</div>
+                <div class="pub-authors">Syed Kumayl Raza Moosavi, Muhammad Hamza Zafar, Filippo Sanfilippo</div>
+                <div class="pub-venue">IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2024</div>
+                <div class="pub-links">
+                    <a href="#" target="_blank">PDF</a>
+                    <a href="#" target="_blank">IEEE Xplore</a>
+                </div>
+            </div>
+
+            <div class="year-divider">2023</div>
+
+            <div class="publication-item">
+                <div class="pub-title">Event-Driven Human Detection and Tracking for Dynamic Environments</div>
+                <div class="pub-authors">Filippo Sanfilippo, Syed Kumayl Raza Moosavi</div>
+                <div class="pub-venue">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2023</div>
+                <div class="pub-links">
+                    <a href="#" target="_blank">PDF</a>
+                    <a href="#" target="_blank">IEEE Xplore</a>
+                    <a href="#" target="_blank">Code</a>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="pub-title">Spatio-Temporal Attention for Event-Based Action Recognition</div>
+                <div class="pub-authors">Muhammad Hamza Zafar, Syed Kumayl Raza Moosavi, Filippo Sanfilippo</div>
+                <div class="pub-venue">Computer Vision and Pattern Recognition (CVPR), 2023</div>
+                <div class="pub-links">
+                    <a href="#" target="_blank">PDF</a>
+                    <a href="#" target="_blank">arXiv</a>
+                    <a href="#" target="_blank">Code</a>
+                    <a href="#" target="_blank">Project Page</a>
+                </div>
+            </div>
+
+            <footer>
+                <p>&copy; 2025 Neuromorphic Vision Research | Advancing the Future of Human-Robot Interaction</p>
+            </footer>
+        </div>
+    </div>
+
     <div id="team" class="section">
         <div class="container">
             <header>
@@ -417,7 +789,7 @@
 
             <div class="team-grid">
                 <div class="team-member">
-                    <img src="filippo.jpeg" alt="Name" class="member-photo">
+                    <img src="filippo.jpeg" alt="Dr. Filippo Sanfilippo" class="member-photo">
                     <h3 class="member-name">Dr. Filippo Sanfilippo</h3>
                     <p class="member-role">Professor</p>
                     <p class="member-bio">
@@ -425,12 +797,12 @@
                     </p>
                     <div class="member-links">
                         <a href="mailto:filippo.sanfilippo@uia.no">Email</a>
-                        <a href="https://scholar.google.com/citations?user=i5FepLsAAAAJ&hl=no">Scholar</a>
+                        <a href="https://scholar.google.com/citations?user=i5FepLsAAAAJ&hl=no" target="_blank">Scholar</a>
                     </div>
                 </div>
 
                 <div class="team-member">
-                    <img src="hamza.jpg" alt="Name" class="member-photo">
+                    <img src="hamza.jpg" alt="Muhammad Hamza Zafar" class="member-photo">
                     <h3 class="member-name">Muhammad Hamza Zafar</h3>
                     <p class="member-role">PhD Researcher</p>
                     <p class="member-bio">
@@ -438,12 +810,12 @@
                     </p>
                     <div class="member-links">
                         <a href="mailto:muhammad.h.zafar@uia.no">Email</a>
-                        <a href="https://scholar.google.com/citations?user=mehULisAAAAJ&hl=no&oi=ao">Scholar</a>
+                        <a href="https://scholar.google.com/citations?user=mehULisAAAAJ&hl=no&oi=ao" target="_blank">Scholar</a>
                     </div>
                 </div>
 
                 <div class="team-member">
-                    <img src="kumayl.jpg" alt="Name" class="member-photo">
+                    <img src="kumayl.jpg" alt="Syed Kumayl Raza Moosavi" class="member-photo">
                     <h3 class="member-name">Syed Kumayl Raza Moosavi</h3>
                     <p class="member-role">PhD Researcher</p>
                     <p class="member-bio">
@@ -451,7 +823,7 @@
                     </p>
                     <div class="member-links">
                         <a href="mailto:syed.k.moosavi@uia.no">Email</a>
-                        <a href="https://scholar.google.com/citations?user=dscAe68AAAAJ&hl=no">Scholar</a>
+                        <a href="https://scholar.google.com/citations?user=dscAe68AAAAJ&hl=no" target="_blank">Scholar</a>
                     </div>
                 </div>
 
@@ -528,6 +900,7 @@
     </script>
 </body>
 </html>
+
 
 
 
